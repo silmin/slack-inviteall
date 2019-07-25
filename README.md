@@ -1,1 +1,1 @@
-# slack-inviteall
+# slack_invite-all
