@@ -27,7 +27,7 @@ def getUsers():
 
     # res: ["members"][idx]["name"] -> [@]name
     res = requests.get(url, params=payload).json()
-
+    
     # userを抽出してname:idのdictを作成
     users = {idx["name"]:idx["id"] for idx in res["members"] if isUser(idx)}
 
@@ -37,6 +37,4 @@ def getUsers():
 if __name__ == "__main__" :
     channels = getChannels(sys.argv[1])
     users = getUsers()
-    print(channels)
-    print(users)
     
