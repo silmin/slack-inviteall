@@ -13,7 +13,7 @@ def getAllUsers(token):
     res = requests.get(url, params=payload).json()
     
     # userを抽出してname:idのdictを作成
-    users = {idx["name"]:idx["id"] for idx in res["members"] if isUser(idx)}
+    users = {idx["real_name"]:idx["id"] for idx in res["members"] if isUser(idx)}
 
     return users
 
